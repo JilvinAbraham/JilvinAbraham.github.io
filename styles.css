@@ -59,14 +59,21 @@ nav {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     background: linear-gradient(135deg, #1a2a6c 0%, #2c3e50 100%);
-    padding: 0 1rem;
+    padding: 6rem 1rem 2rem;
     color: white;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
 }
 
 .hero-content h1 {
@@ -207,6 +214,42 @@ nav {
     background-color: #2980b9;
 }
 
+/* Project Card Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.project-card {
+    animation: slideIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
+.project-card:nth-child(5) { animation-delay: 0.5s; }
+.project-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Responsive Design for Projects */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
 /* Contact Section */
 .contact {
     padding: 5rem 1rem;
@@ -293,6 +336,10 @@ footer {
         display: none;
     }
     
+    .hero {
+        padding: 5rem 1rem 2rem;
+    }
+    
     .hero-content h1 {
         font-size: 2rem;
     }
@@ -303,5 +350,247 @@ footer {
 
     .skill-tags {
         justify-content: center;
+    }
+
+    .terminal-container {
+        margin: 1rem auto 0;
+    }
+}
+
+/* Terminal Styles */
+.terminal-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto 0;
+    background: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.terminal-header {
+    background: #2d2d2d;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #3d3d3d;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-right: 1rem;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.terminal-button.close {
+    background: #ff5f56;
+}
+
+.terminal-button.minimize {
+    background: #ffbd2e;
+}
+
+.terminal-button.maximize {
+    background: #27c93f;
+}
+
+.terminal-title {
+    color: #888;
+    font-size: 0.9rem;
+    font-family: 'Courier New', monospace;
+}
+
+.terminal-body {
+    padding: 1rem;
+    font-family: 'Courier New', monospace;
+    color: #fff;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.terminal-output {
+    margin-bottom: 1rem;
+}
+
+.terminal-line {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.terminal-prompt {
+    color: #4af626;
+    margin-right: 0.5rem;
+}
+
+.terminal-command {
+    color: #fff;
+}
+
+.terminal-input {
+    display: flex;
+    align-items: center;
+}
+
+.terminal-command-input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    width: 100%;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+
+.terminal-command-input::placeholder {
+    color: #666;
+}
+
+/* Terminal Command Output Styles */
+.command-output {
+    color: #fff;
+    white-space: pre-wrap;
+    margin-left: 1.5rem;
+}
+
+.command-error {
+    color: #ff5f56;
+}
+
+.command-success {
+    color: #4af626;
+}
+
+/* Terminal Welcome Message */
+.welcome-message {
+    color: #4af626;
+    margin-bottom: 1rem;
+}
+
+/* Responsive Design for Terminal */
+@media (max-width: 768px) {
+    .terminal-container {
+        margin: 1rem auto;
+    }
+    
+    .terminal-body {
+        height: 250px;
+    }
+}
+
+/* Blog Section */
+.blog {
+    padding: 5rem 1rem;
+    background-color: #fff;
+}
+
+.blog h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #2c3e50;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover .blog-image img {
+    transform: scale(1.1);
+}
+
+.blog-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-date {
+    color: #3498db;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.blog-content h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.blog-content p {
+    color: #666;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.blog-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: inline-block;
+    margin-top: auto;
+}
+
+.blog-link:hover {
+    color: #2980b9;
+}
+
+.blog-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* Responsive Design for Blog Section */
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .blog-card {
+        max-width: 400px;
+        margin: 0 auto;
     }
 } 

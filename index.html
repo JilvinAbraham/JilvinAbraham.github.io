@@ -10,11 +10,12 @@
 <body>
     <header>
         <nav>
-            <div class="logo">DevOps Engineer</div>
+            <div class="logo">DevOps</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -26,6 +27,29 @@
             <h2>DevOps Engineer</h2>
             <p>I automate, deploy, and maintain scalable infrastructure</p>
             <a href="#contact" class="cta-button">Get in Touch</a>
+            
+            <div class="terminal-container">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="terminal-button close"></span>
+                        <span class="terminal-button minimize"></span>
+                        <span class="terminal-button maximize"></span>
+                    </div>
+                    <div class="terminal-title">Terminal</div>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-output">
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-command"></span>
+                        </div>
+                    </div>
+                    <div class="terminal-input">
+                        <span class="terminal-prompt">$</span>
+                        <input type="text" class="terminal-command-input" autofocus>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -33,7 +57,7 @@
         <h2>About Me</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>I am a passionate DevOps Engineer with expertise in automating infrastructure, implementing CI/CD pipelines, and ensuring high availability of services. I specialize in cloud technologies, containerization, and infrastructure as code.</p>
+                <p>I am a passionate DevOps Engineer with expertise in automating infrastructure, implementing CI/CD pipelines, and ensuring high availability of services. I specialize in cloud technologies, containerization and infrastructure as code.</p>
                 <div class="skills">
                     <h3>Technical Skills</h3>
                     <div class="skill-tags">
@@ -62,21 +86,63 @@
             <div class="project-card">
                 <img src="images/project1.jpg" alt="CI/CD Pipeline">
                 <h3>Automated CI/CD Pipeline</h3>
-                <p>Implemented a robust CI/CD pipeline using Jenkins and Docker for automated testing and deployment</p>
+                <p>Implemented a robust CI/CD pipeline using Jenkins and Docker for automated testing and deployment<br><br></p>
                 <a href="https://github.com/JilvinAbraham/ci-cd-pipeline" class="project-link">View Details</a>
             </div>
             <div class="project-card">
                 <img src="images/project2.jpg" alt="Kubernetes Cluster">
                 <h3>Kubernetes Cluster Setup</h3>
-                <p>Designed and deployed a highly available Kubernetes cluster with multipass ansible and k3s</p>
+                <p>Designed and deployed a highly available Kubernetes cluster with multipass ansible and k3s<br><br></p>
                 <a href="https://github.com/JilvinAbraham/devops-lab" class="project-link">View Details</a>
             </div>
             <div class="project-card">
                 <img src="images/project3.jpg" alt="Infrastructure as Code">
-                <h3>Infrastructure as Code</h3>
-                <p>Created reusable Terraform modules for cloud infrastructure provisioning and management of resources</p>
+                <h3>SSH Access Management</h3>
+                <p> Automated solution for granting and revoking time-limited SSH access to developers in an organization.<br><br></p>
                 <a href="" class="project-link">View Details</a>
             </div>
+        </div>
+    </section>
+
+    <section id="blog" class="blog">
+        <h2>My Blog</h2>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="images/blog1.jpg" alt="DevOps Best Practices">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">April 29, 2024</span>
+                    <h3>Unlocking Secure Access with SSH and SSH Tunneling</h3>
+                    <p>Discover how to securely connect to your privately hosted resources using SSH and SSH tunneling. This guide explains the essentials of SSH, key-based authentication, configuring a bastion host, and setting up SSH tunnels for safe and seamless access to remote servers.</p>
+                    <a href="https://jilvinabraham.hashnode.dev/unlocking-secure-access-connecting-to-your-privately-hosted-resources-with-ssh-and-ssh-tunneling" class="blog-link">Read More</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="images/blog2.jpg" alt="Kubernetes Guide">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">April 28, 2024</span>
+                    <h3>Port Knocking</h3>
+                    <p>A comprehensive guide to understanding port knocking, a technique used to secure network connections by requiring multiple sequential connections to specific ports.</p>
+                    <a href="https://jilvinabraham.hashnode.dev/port-knocking" class="blog-link">Read More</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="images/blog3.jpg" alt="CI/CD Pipeline">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">April 27, 2024</span>
+                    <h3>Understanding Essential Git Tools: git bisect, git blame, and git rerere</h3>
+                    <p>Learn how to use git bisect, git blame, and git rerere to debug and maintain your codebase efficiently.</p>
+                    <a href="https://jilvinabraham.hashnode.dev/understanding-essential-git-tools" class="blog-link">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="blog-cta">
+            <a href="https://jilvinabraham.hashnode.dev/" class="cta-button">View All Blogs</a>
         </div>
     </section>
 
@@ -90,8 +156,8 @@
                 <button type="submit" class="submit-button">Send Message</button>
             </form>
             <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/JilvinAbraham"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/jilvinabraham/"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </section>
