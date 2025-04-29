@@ -17,8 +17,28 @@
         header {
             background-color: #4CAF50;
             color: white;
-            padding: 20px;
-            text-align: center;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #45a049;
         }
         .hero {
             text-align: center;
@@ -57,11 +77,16 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to My Portfolio</h1>
+        <h1>Jilvin Abraham</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
     <section class="hero">
         <h1>Hi, I'm Jilvin Abraham</h1>
-        <p>A passionate developer creating amazing web experiences.</p>
+        <p>A passionate DevOps Engineer creating amazing web experiences.</p>
         <a href="#projects" class="btn">View My Work</a>
     </section>
     <footer>
