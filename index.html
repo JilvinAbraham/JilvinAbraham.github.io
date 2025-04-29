@@ -3,58 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jilvin Abraham - Portfolio</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS -->
+    <title>DevOps Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1 class="logo">Jilvin Abraham</h1>
-            <nav>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-                <a href="https://github.com/JilvinAbraham" target="_blank">GitHub</a>
-            </nav>
-        </div>
+        <nav>
+            <div class="logo">DevOps Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <section id="hero">
+
+    <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Hi, I'm Jilvin Abraham</h1>
-            <p>A passionate DevOps Engineer working on the latest tech stack and automating workflows to make life easier.</p>
-            <a href="#projects" class="btn">View My Work</a>
+            <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
+            <h2>DevOps Engineer</h2>
+            <p>I automate, deploy, and maintain scalable infrastructure</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
         </div>
     </section>
-    <section id="about" class="section">
+
+    <section id="about" class="about">
         <h2>About Me</h2>
-        <p>I thrive on solving complex problems and building efficient systems. With expertise in CI/CD, cloud infrastructure, and automation, I aim to deliver scalable and reliable solutions.</p>
-    </section>
-    <section id="projects" class="section">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>CI/CD Pipeline Automation</h3>
-            <p>Automated deployment pipelines using Jenkins, Docker, and Kubernetes to streamline the development process.</p>
+        <div class="about-content">
+            <div class="about-text">
+                <p>I am a passionate DevOps Engineer with expertise in automating infrastructure, implementing CI/CD pipelines, and ensuring high availability of services. I specialize in cloud technologies, containerization, and infrastructure as code.</p>
+                <div class="skills">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-tags">
+                        <span>Docker</span>
+                        <span>Kubernetes</span>
+                        <span>AWS/GCP/Azure</span>
+                        <span>Terraform</span>
+                        <span>Ansible</span>
+                        <span>Jenkins</span>
+                        <span>Git</span>
+                        <span>CI/CD</span>
+                        <span>Linux</span>
+                        <span>Python</span>
+                        <span>Bash</span>
+                        <span>Prometheus</span>
+                        <span>Grafana</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="project">
-            <h3>Cloud Infrastructure as Code</h3>
-            <p>Designed scalable cloud infrastructure using Terraform and AWS, ensuring high availability and fault tolerance.</p>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="images/project1.jpg" alt="CI/CD Pipeline">
+                <h3>Automated CI/CD Pipeline</h3>
+                <p>Implemented a robust CI/CD pipeline using Jenkins and Docker for automated testing and deployment</p>
+                <a href="#" class="project-link">View Details</a>
+            </div>
+            <div class="project-card">
+                <img src="images/project2.jpg" alt="Kubernetes Cluster">
+                <h3>Kubernetes Cluster Setup</h3>
+                <p>Designed and deployed a highly available Kubernetes cluster with monitoring and logging solutions</p>
+                <a href="#" class="project-link">View Details</a>
+            </div>
+            <div class="project-card">
+                <img src="images/project3.jpg" alt="Infrastructure as Code">
+                <h3>Infrastructure as Code</h3>
+                <p>Created reusable Terraform modules for cloud infrastructure provisioning and management</p>
+                <a href="#" class="project-link">View Details</a>
+            </div>
         </div>
     </section>
-    <section id="contact" class="section">
-        <h2>Contact Me</h2>
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
+
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <div class="contact-content">
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-docker"></i></a>
+                <a href="#"><i class="fab fa-aws"></i></a>
+            </div>
+        </div>
     </section>
+
     <footer>
-        <p>&copy; 2025 Jilvin Abraham. All rights reserved.</p>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script> <!-- Link to JavaScript -->
+
+    <script src="script.js"></script>
 </body>
-</html>
+</html> 
