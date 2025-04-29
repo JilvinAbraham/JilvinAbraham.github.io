@@ -4,76 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jilvin Abraham - Portfolio</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
-    <style>
-        /* Inline styles for quick setup, move to styles.css for better organization */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 1.5em;
-        }
-        nav {
-            display: flex;
-            gap: 15px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1em;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-        nav a:hover {
-            background-color: #45a049;
-        }
-        .hero {
-            text-align: center;
-            padding: 50px 20px;
-        }
-        .hero h1 {
-            font-size: 3em;
-            margin: 0;
-        }
-        .hero p {
-            font-size: 1.2em;
-            margin: 10px 0 20px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 1em;
-            color: white;
-            background-color: #4CAF50;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .btn:hover {
-            background-color: #45a049;
-        }
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background-color: #333;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS -->
 </head>
 <body>
     <header>
@@ -82,15 +13,39 @@
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
+            <a href="https://github.com/JilvinAbraham" target="_blank">GitHub</a>
         </nav>
     </header>
-    <section class="hero">
-        <h1>Hi, I'm Jilvin Abraham</h1>
-        <p>A passionate DevOps Engineer creating amazing web experiences.</p>
-        <a href="#projects" class="btn">View My Work</a>
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>I am a passionate DevOps Engineer working on the latest trending tech stack and automating stuff to make life easier. I thrive on solving complex problems and building efficient systems.</p>
+    </section>
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project 1: CI/CD Pipeline Automation</h3>
+            <p>Automated deployment pipelines using Jenkins, Docker, and Kubernetes to streamline the development process.</p>
+        </div>
+        <div class="project">
+            <h3>Project 2: Cloud Infrastructure as Code</h3>
+            <p>Designed scalable cloud infrastructure using Terraform and AWS, ensuring high availability and fault tolerance.</p>
+        </div>
+    </section>
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
     </section>
     <footer>
         <p>&copy; 2025 Jilvin Abraham. All rights reserved.</p>
     </footer>
+    <script src="script.js"></script> <!-- Link to JavaScript -->
 </body>
 </html>
