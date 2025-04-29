@@ -13,8 +13,8 @@ body {
 
 /* Header and Navigation */
 header {
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     position: fixed;
     width: 100%;
     top: 0;
@@ -28,33 +28,121 @@ nav {
     padding: 1rem 5%;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #2c3e50;
+    color: #4af626;
     font-family: 'Courier New', monospace;
+    text-shadow: 0 0 5px rgba(74, 246, 38, 0.5);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.logo::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: #4af626;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 .nav-links {
     display: flex;
     list-style: none;
+    background: rgba(30, 30, 30, 0.9);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 1px solid #333;
 }
 
 .nav-links li {
     margin-left: 2rem;
+    position: relative;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #2c3e50;
+    color: #fff;
     font-weight: 500;
-    transition: color 0.3s ease;
+    font-family: 'Courier New', monospace;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #4af626;
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #3498db;
+    color: #4af626;
+}
+
+.nav-links a:hover::before {
+    width: 100%;
+}
+
+/* Terminal-like decoration */
+nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #4af626, #3498db, #4af626);
+    animation: gradient 3s linear infinite;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Responsive Design for Navbar */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #1e1e1e;
+        flex-direction: column;
+        padding: 1rem;
+        border-radius: 0;
+        border: none;
+        border-top: 1px solid #333;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.5rem 1rem;
+    }
 }
 
 /* Hero Section */
@@ -65,66 +153,298 @@ nav {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, #1a2a6c 0%, #2c3e50 100%);
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     padding: 6rem 1rem 2rem;
     color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(74, 246, 38, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(52, 152, 219, 0.1) 0%, transparent 50%);
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 .hero-content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem 0;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
     font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px rgba(74, 246, 38, 0.3);
 }
 
 .hero-content h2 {
     font-size: 1.5rem;
-    color: #3498db;
+    color: #4af626;
     margin-bottom: 1rem;
+    font-family: 'Courier New', monospace;
 }
 
 .highlight {
-    color: #3498db;
+    color: #4af626;
+    text-shadow: 0 0 10px rgba(74, 246, 38, 0.3);
 }
 
 .cta-button {
     display: inline-block;
     padding: 1rem 2rem;
-    background-color: #3498db;
-    color: white;
+    background-color: transparent;
+    color: #4af626;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 1rem;
     transition: all 0.3s ease;
-    border: 2px solid #3498db;
+    border: 2px solid #4af626;
+    font-family: 'Courier New', monospace;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(74, 246, 38, 0.2), transparent);
+    transition: all 0.5s ease;
 }
 
 .cta-button:hover {
-    background-color: transparent;
-    color: #3498db;
+    background-color: rgba(74, 246, 38, 0.1);
+    box-shadow: 0 0 15px rgba(74, 246, 38, 0.3);
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+/* Terminal Container in Hero */
+.terminal-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto 0;
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(74, 246, 38, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.terminal-header {
+    background: rgba(45, 45, 45, 0.9);
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(74, 246, 38, 0.2);
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-right: 1rem;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.terminal-button.close {
+    background: #ff5f56;
+    box-shadow: 0 0 5px rgba(255, 95, 86, 0.5);
+}
+
+.terminal-button.minimize {
+    background: #ffbd2e;
+    box-shadow: 0 0 5px rgba(255, 189, 46, 0.5);
+}
+
+.terminal-button.maximize {
+    background: #27c93f;
+    box-shadow: 0 0 5px rgba(39, 201, 63, 0.5);
+}
+
+.terminal-title {
+    color: #888;
+    font-size: 0.9rem;
+    font-family: 'Courier New', monospace;
+}
+
+.terminal-body {
+    padding: 1rem;
+    font-family: 'Courier New', monospace;
+    color: #fff;
+    height: 300px;
+    overflow-y: auto;
+    background: rgba(30, 30, 30, 0.7);
+}
+
+.terminal-output {
+    margin-bottom: 1rem;
+}
+
+.terminal-line {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.terminal-prompt {
+    color: #4af626;
+    margin-right: 0.5rem;
+    text-shadow: 0 0 5px rgba(74, 246, 38, 0.5);
+}
+
+.terminal-command {
+    color: #fff;
+}
+
+.terminal-input {
+    display: flex;
+    align-items: center;
+}
+
+.terminal-command-input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    width: 100%;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+
+.terminal-command-input::placeholder {
+    color: #666;
+}
+
+/* Terminal Command Output Styles */
+.command-output {
+    color: #fff;
+    white-space: pre-wrap;
+    margin-left: 1.5rem;
+}
+
+.command-error {
+    color: #ff5f56;
+}
+
+.command-success {
+    color: #4af626;
+    text-shadow: 0 0 5px rgba(74, 246, 38, 0.5);
+}
+
+/* Terminal Welcome Message */
+.welcome-message {
+    color: #4af626;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 5px rgba(74, 246, 38, 0.5);
+}
+
+/* Responsive Design for Terminal */
+@media (max-width: 768px) {
+    .terminal-container {
+        margin: 1rem auto;
+    }
+    
+    .terminal-body {
+        height: 250px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.2rem;
+    }
 }
 
 /* About Section */
 .about {
     padding: 5rem 1rem;
-    background-color: #fff;
+    background-color: #1a1a1a;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 80% 20%, rgba(74, 246, 38, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(52, 152, 219, 0.05) 0%, transparent 50%);
 }
 
 .about h2 {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2.5rem;
-    color: #2c3e50;
+    color: #4af626;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px rgba(74, 246, 38, 0.3);
 }
 
 .about-content {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.about-text {
+    background: rgba(30, 30, 30, 0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid rgba(74, 246, 38, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.about-text p {
+    color: #fff;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    font-family: 'Courier New', monospace;
+}
+
+.skills h3 {
+    color: #4af626;
+    margin-bottom: 1rem;
+    font-family: 'Courier New', monospace;
 }
 
 .skill-tags {
@@ -135,31 +455,50 @@ nav {
 }
 
 .skill-tags span {
-    background-color: #e0e0e0;
+    background-color: rgba(30, 30, 30, 0.9);
     padding: 0.5rem 1rem;
-    border-radius: 20px;
+    border-radius: 5px;
     font-size: 0.9rem;
     font-family: 'Courier New', monospace;
     transition: all 0.3s ease;
+    border: 1px solid rgba(74, 246, 38, 0.3);
+    color: #fff;
 }
 
 .skill-tags span:hover {
-    background-color: #3498db;
-    color: white;
+    background-color: rgba(74, 246, 38, 0.2);
+    color: #4af626;
     transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(74, 246, 38, 0.3);
 }
 
 /* Projects Section */
 .projects {
     padding: 5rem 1rem;
-    background-color: #f5f7fa;
+    background-color: #2d2d2d;
+    position: relative;
+    overflow: hidden;
+}
+
+.projects::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(74, 246, 38, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(52, 152, 219, 0.05) 0%, transparent 50%);
 }
 
 .projects h2 {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2.5rem;
-    color: #2c3e50;
+    color: #4af626;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px rgba(74, 246, 38, 0.3);
 }
 
 .project-grid {
@@ -168,50 +507,105 @@ nav {
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .project-card {
-    background: white;
-    border-radius: 10px;
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
+    border: 1px solid rgba(74, 246, 38, 0.3);
+    backdrop-filter: blur(5px);
+    position: relative;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 48%, rgba(74, 246, 38, 0.1) 50%, transparent 52%);
+    background-size: 10px 10px;
+    pointer-events: none;
+    opacity: 0.3;
 }
 
 .project-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-bottom: 1px solid rgba(74, 246, 38, 0.3);
+    filter: grayscale(30%);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover img {
+    filter: grayscale(0%);
 }
 
 .project-card h3 {
     padding: 1rem;
     margin: 0;
-    color: #2c3e50;
+    color: #4af626;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 5px rgba(74, 246, 38, 0.3);
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.project-card h3::before {
+    content: '>';
+    color: #4af626;
+    margin-right: 0.5rem;
+    animation: blink 1s infinite;
 }
 
 .project-card p {
     padding: 0 1rem;
-    color: #666;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
 }
 
 .project-link {
     display: block;
     padding: 1rem;
     text-align: center;
-    background-color: #3498db;
-    color: white;
+    background-color: transparent;
+    color: #4af626;
     text-decoration: none;
     transition: all 0.3s ease;
+    border-top: 1px solid rgba(74, 246, 38, 0.3);
+    font-family: 'Courier New', monospace;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(74, 246, 38, 0.1), transparent);
+    transition: all 0.5s ease;
 }
 
 .project-link:hover {
-    background-color: #2980b9;
+    background-color: rgba(74, 246, 38, 0.1);
+    color: #4af626;
+    text-shadow: 0 0 5px rgba(74, 246, 38, 0.5);
+}
+
+.project-link:hover::before {
+    left: 100%;
 }
 
 /* Project Card Animation */
@@ -253,54 +647,77 @@ nav {
 /* Contact Section */
 .contact {
     padding: 5rem 1rem;
-    background-color: #fff;
+    background-color: #2d2d2d;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(74, 246, 38, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(52, 152, 219, 0.05) 0%, transparent 50%);
 }
 
 .contact h2 {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2.5rem;
-    color: #2c3e50;
+    color: #4af626;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px rgba(74, 246, 38, 0.3);
 }
 
 .contact-content {
     max-width: 600px;
     margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.contact-message {
+    background: rgba(30, 30, 30, 0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid rgba(74, 246, 38, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    margin-bottom: 2rem;
 }
 
-.contact-form input,
-.contact-form textarea {
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
+.contact-message h3 {
+    color: #4af626;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
     font-family: 'Courier New', monospace;
 }
 
-.contact-form textarea {
-    height: 150px;
-    resize: vertical;
+.contact-message p {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-family: 'Courier New', monospace;
 }
 
-.submit-button {
-    padding: 1rem;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
+.email-link {
+    display: inline-block;
+    color: #4af626;
+    font-size: 1.2rem;
+    text-decoration: none;
+    margin-top: 0.5rem;
     transition: all 0.3s ease;
+    font-family: 'Courier New', monospace;
 }
 
-.submit-button:hover {
-    background-color: #2980b9;
+.email-link:hover {
+    color: #4af626;
+    text-shadow: 0 0 5px rgba(74, 246, 38, 0.5);
 }
 
 .social-links {
@@ -311,23 +728,42 @@ nav {
 }
 
 .social-links a {
-    color: #2c3e50;
+    color: #fff;
     font-size: 1.5rem;
     transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #3498db;
+    color: #4af626;
     transform: translateY(-3px);
+    text-shadow: 0 0 5px rgba(74, 246, 38, 0.5);
+}
+
+/* Responsive Design for Contact Section */
+@media (max-width: 768px) {
+    .about-text,
+    .project-card,
+    .contact-message {
+        margin: 0 1rem;
+    }
+    
+    .skill-tags {
+        justify-content: center;
+    }
+    
+    .social-links {
+        flex-wrap: wrap;
+    }
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 2rem;
-    background-color: #2c3e50;
-    color: white;
+    background-color: #1a1a1a;
+    color: #fff;
     font-family: 'Courier New', monospace;
+    border-top: 1px solid rgba(74, 246, 38, 0.3);
 }
 
 /* Responsive Design */
@@ -357,147 +793,33 @@ footer {
     }
 }
 
-/* Terminal Styles */
-.terminal-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 2rem auto 0;
-    background: #1e1e1e;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.terminal-header {
-    background: #2d2d2d;
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #3d3d3d;
-}
-
-.terminal-buttons {
-    display: flex;
-    gap: 0.5rem;
-    margin-right: 1rem;
-}
-
-.terminal-button {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.terminal-button.close {
-    background: #ff5f56;
-}
-
-.terminal-button.minimize {
-    background: #ffbd2e;
-}
-
-.terminal-button.maximize {
-    background: #27c93f;
-}
-
-.terminal-title {
-    color: #888;
-    font-size: 0.9rem;
-    font-family: 'Courier New', monospace;
-}
-
-.terminal-body {
-    padding: 1rem;
-    font-family: 'Courier New', monospace;
-    color: #fff;
-    height: 300px;
-    overflow-y: auto;
-}
-
-.terminal-output {
-    margin-bottom: 1rem;
-}
-
-.terminal-line {
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: flex-start;
-}
-
-.terminal-prompt {
-    color: #4af626;
-    margin-right: 0.5rem;
-}
-
-.terminal-command {
-    color: #fff;
-}
-
-.terminal-input {
-    display: flex;
-    align-items: center;
-}
-
-.terminal-command-input {
-    background: transparent;
-    border: none;
-    color: #fff;
-    font-family: 'Courier New', monospace;
-    font-size: 1rem;
-    width: 100%;
-    outline: none;
-    padding: 0;
-    margin: 0;
-}
-
-.terminal-command-input::placeholder {
-    color: #666;
-}
-
-/* Terminal Command Output Styles */
-.command-output {
-    color: #fff;
-    white-space: pre-wrap;
-    margin-left: 1.5rem;
-}
-
-.command-error {
-    color: #ff5f56;
-}
-
-.command-success {
-    color: #4af626;
-}
-
-/* Terminal Welcome Message */
-.welcome-message {
-    color: #4af626;
-    margin-bottom: 1rem;
-}
-
-/* Responsive Design for Terminal */
-@media (max-width: 768px) {
-    .terminal-container {
-        margin: 1rem auto;
-    }
-    
-    .terminal-body {
-        height: 250px;
-    }
-}
-
 /* Blog Section */
 .blog {
     padding: 5rem 1rem;
-    background-color: #fff;
+    background-color: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 80% 20%, rgba(74, 246, 38, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(52, 152, 219, 0.05) 0%, transparent 50%);
 }
 
 .blog h2 {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2.5rem;
-    color: #2c3e50;
+    color: #4af626;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px rgba(74, 246, 38, 0.3);
 }
 
 .blog-grid {
@@ -506,27 +828,54 @@ footer {
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .blog-card {
-    background: white;
-    border-radius: 10px;
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
+    border: 1px solid rgba(74, 246, 38, 0.3);
+    backdrop-filter: blur(5px);
     display: flex;
     flex-direction: column;
+    height: 100%;
+    position: relative;
 }
 
-.blog-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+.blog-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 48%, rgba(74, 246, 38, 0.1) 50%, transparent 52%);
+    background-size: 10px 10px;
+    pointer-events: none;
+    opacity: 0.3;
 }
 
 .blog-image {
     width: 100%;
     height: 200px;
     overflow: hidden;
+    border-bottom: 1px solid rgba(74, 246, 38, 0.3);
+    position: relative;
+}
+
+.blog-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 70%, rgba(0, 0, 0, 0.7));
+    pointer-events: none;
 }
 
 .blog-image img {
@@ -534,48 +883,88 @@ footer {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    filter: grayscale(30%);
 }
 
 .blog-card:hover .blog-image img {
     transform: scale(1.1);
+    filter: grayscale(0%);
 }
 
 .blog-content {
     padding: 1.5rem;
-    flex-grow: 1;
+    color: #fff;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 }
 
 .blog-date {
-    color: #3498db;
+    color: #4af626;
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    align-items: center;
+}
+
+.blog-date::before {
+    content: '>';
+    margin-right: 0.5rem;
+    animation: blink 1s infinite;
 }
 
 .blog-content h3 {
-    color: #2c3e50;
+    color: #4af626;
     margin-bottom: 1rem;
     font-size: 1.3rem;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 5px rgba(74, 246, 38, 0.3);
 }
 
 .blog-content p {
-    color: #666;
+    color: #fff;
     margin-bottom: 1rem;
+    font-family: 'Courier New', monospace;
     flex-grow: 1;
+    line-height: 1.6;
 }
 
 .blog-link {
-    color: #3498db;
+    color: #4af626;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     display: inline-block;
     margin-top: auto;
+    font-family: 'Courier New', monospace;
+    padding: 0.5rem 0;
+    border-top: 1px solid rgba(74, 246, 38, 0.3);
+    width: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(74, 246, 38, 0.1), transparent);
+    transition: all 0.5s ease;
 }
 
 .blog-link:hover {
-    color: #2980b9;
+    color: #4af626;
+    text-shadow: 0 0 5px rgba(74, 246, 38, 0.5);
+    background-color: rgba(74, 246, 38, 0.1);
+}
+
+.blog-link:hover::before {
+    left: 100%;
 }
 
 .blog-cta {
@@ -592,5 +981,245 @@ footer {
     .blog-card {
         max-width: 400px;
         margin: 0 auto;
+    }
+}
+
+/* Experience Section */
+.experience {
+    padding: 5rem 1rem;
+    background-color: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+}
+
+.experience::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(74, 246, 38, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(52, 152, 219, 0.05) 0%, transparent 50%);
+}
+
+.experience h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #4af626;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px rgba(74, 246, 38, 0.3);
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background: linear-gradient(to bottom, #4af626, transparent);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(74, 246, 38, 0.5);
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -13px;
+    background-color: #1a1a1a;
+    border: 4px solid #4af626;
+    border-radius: 50%;
+    top: 15px;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(74, 246, 38, 0.5);
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -12px;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background: rgba(30, 30, 30, 0.9);
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(74, 246, 38, 0.3);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    border-color: rgba(74, 246, 38, 0.5);
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(74, 246, 38, 0.3);
+}
+
+.timeline-header .date {
+    color: #4af626;
+    font-weight: bold;
+    font-size: 1.1rem;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 5px rgba(74, 246, 38, 0.3);
+}
+
+.company-tag {
+    background: rgba(74, 246, 38, 0.1);
+    color: #4af626;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-family: 'Courier New', monospace;
+    border: 1px solid rgba(74, 246, 38, 0.3);
+}
+
+.timeline-content h3 {
+    color: #4af626;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 5px rgba(74, 246, 38, 0.3);
+}
+
+.timeline-details {
+    color: #fff;
+}
+
+.terminal-command {
+    color: #4af626;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 5px rgba(74, 246, 38, 0.3);
+}
+
+.terminal-output {
+    list-style: none;
+    padding-left: 1.5rem;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+}
+
+.terminal-output li {
+    position: relative;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+}
+
+.terminal-output li::before {
+    content: '>';
+    position: absolute;
+    left: -1rem;
+    color: #4af626;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Responsive Design for Timeline */
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+
+    .timeline-item::after {
+        left: 18px;
+    }
+
+    .timeline-item:nth-child(even)::after {
+        left: 18px;
+    }
+
+    .timeline-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #4af626;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
     }
 } 

@@ -110,4 +110,59 @@ document.addEventListener('DOMContentLoaded', () => {
             header.style.boxShadow = 'none';
         }
     });
+
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Terminal-like typing effect
+    const terminalCommand = document.querySelector('.terminal-command');
+    const commands = [
+        'echo "Welcome to my DevOps Portfolio"',
+        'ls -la projects/',
+        'cat about.txt',
+        'tail -f experience.log'
+    ];
+    let commandIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeCommand() {
+        const currentCommand = commands[commandIndex];
+        
+        if (isDeleting) {
+            terminalCommand.textContent = currentCommand.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            terminalCommand.textContent = currentCommand.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        if (!isDeleting && charIndex === currentCommand.length) {
+            isDeleting = true;
+            setTimeout(typeCommand, 2000);
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            commandIndex = (commandIndex + 1) % commands.length;
+            setTimeout(typeCommand, 500);
+        } else {
+            setTimeout(typeCommand, isDeleting ? 50 : 100);
+        }
+    }
+
+    // Start the typing effect
+    typeCommand();
 }); 
