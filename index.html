@@ -3,236 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps Portfolio</title>
+    <title>Jilvin Abraham - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">DevOps</div>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <a href="#home" class="logo">Jilvin Abraham</a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Hi, I'm <span class="highlight">Jilvin Abraham</span></h1>
-            <h2>DevOps Engineer</h2>
-            <p>I automate, deploy and maintain scalable infrastructure</p>
-            <a href="#contact" class="cta-button">Get in Touch</a>
-            
-            <div class="terminal-container">
-                <div class="terminal-header">
-                    <div class="terminal-buttons">
-                        <span class="terminal-button close"></span>
-                        <span class="terminal-button minimize"></span>
-                        <span class="terminal-button maximize"></span>
-                    </div>
-                    <div class="terminal-title">Terminal</div>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Building resilient infrastructure through automation and innovation</h1>
+                <p>I'm Jilvin Abraham, a DevOps Engineer passionate about creating scalable solutions and streamlining deployments. I focus on cloud-native technologies, helping companies modernize their infrastructure and adopt innovative solutions.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="cta-button">Get in Touch</a>
+                    <a href="#about" class="secondary-button">Know More</a>
                 </div>
-                <div class="terminal-body">
-                    <div class="terminal-output">
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">$</span>
-                            <span class="terminal-command"></span>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I specialize in automating infrastructure, implementing CI/CD pipelines, and ensuring high availability of services. My expertise lies in cloud technologies, containerization, and infrastructure as code.</p>
+                    <div class="skills">
+                        <h3>Technical Skills</h3>
+                        <div class="skill-tags">
+                            <span>Docker</span>
+                            <span>Kubernetes</span>
+                            <span>AWS</span>
+                            <span>Terraform</span>
+                            <span>Ansible</span>
+                            <span>Jenkins</span>
+                            <span>Git</span>
+                            <span>CI/CD</span>
+                            <span>Linux</span>
+                            <span>Python</span>
+                            <span>Bash</span>
+                            <span>Prometheus</span>
+                            <span>Grafana</span>
                         </div>
                     </div>
-                    <div class="terminal-input">
-                        <span class="terminal-prompt">$</span>
-                        <input type="text" class="terminal-command-input" autofocus>
-                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>I am a passionate DevOps Engineer with expertise in automating infrastructure, implementing CI/CD pipelines, and ensuring high availability of services. I specialize in cloud technologies, containerization and infrastructure as code.</p>
-                <div class="skills">
-                    <h3>Technical Skills</h3>
-                    <div class="skill-tags">
-                        <span>Docker</span>
-                        <span>Kubernetes</span>
-                        <span>AWS</span>
-                        <span>Terraform</span>
-                        <span>Ansible</span>
-                        <span>Jenkins</span>
-                        <span>Git</span>
-                        <span>CI/CD</span>
-                        <span>Linux</span>
-                        <span>Python</span>
-                        <span>Bash</span>
-                        <span>Prometheus</span>
-                        <span>Grafana</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="experience">
-        <h2>Work Experience</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-header">
-                        <span class="date">2024 - Present</span>
-                        <span class="company-tag">@BrowserStack</span>
-                    </div>
-                    <h3>DevOps Engineer</h3>
-                    <div class="timeline-details">
-                        <p class="terminal-command">$ cat responsibilities.txt</p>
-                        <ul class="terminal-output">
+        <section id="experience" class="experience">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="date">2024 - Present</span>
+                            <span class="company-tag">@BrowserStack</span>
+                        </div>
+                        <h3>DevOps Engineer</h3>
+                        <ul class="timeline-details">
                             <li>Working with cutting-edge technologies including Kubernetes, Jenkins, Terraform, Ansible, and Docker</li>
                             <li>Solving complex scalability challenges in a high-traffic environment</li>
                             <li>Implementing and maintaining CI/CD pipelines for seamless deployments</li>
                             <li>Managing containerized applications and microservices architecture</li>
-                            <li>Collaborating with development teams to optimize infrastructure and deployment processes</li>
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-header">
-                        <span class="date">2021 - 2024</span>
-                        <span class="company-tag">@LeadSquared</span>
-                    </div>
-                    <h3>Software Engineer</h3>
-                    <div class="timeline-details">
-                        <p class="terminal-command">$ cat responsibilities.txt</p>
-                        <ul class="terminal-output">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="date">2021 - 2024</span>
+                            <span class="company-tag">@LeadSquared</span>
+                        </div>
+                        <h3>Software Engineer</h3>
+                        <ul class="timeline-details">
                             <li>Managed and optimized AWS cloud infrastructure and Windows systems</li>
                             <li>Handled RDS services including database maintenance and optimization</li>
                             <li>Implemented monitoring solutions using Prometheus and Grafana</li>
                             <li>Automated deployment processes and infrastructure management</li>
-                            <li>Ensured high availability and performance of production systems</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-header">
-                        <span class="date">2020 - 2021</span>
-                        <span class="company-tag">@LeadSquared</span>
-                    </div>
-                    <h3>Software Engineer Intern</h3>
-                    <div class="timeline-details">
-                        <p class="terminal-command">$ cat responsibilities.txt</p>
-                        <ul class="terminal-output">
-                            <li>Developed projects using .NET framework</li>
-                            <li>Gained hands-on experience with 3-tier architecture</li>
-                            <li>Participated in full-stack development projects</li>
-                            <li>Learned and implemented best practices in software development</li>
-                            <li>Collaborated with senior developers on real-world applications</li>
-                        </ul>
-                    </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Automated CI/CD Pipeline</h3>
+                    <p>Implemented a robust CI/CD pipeline using Jenkins and Docker for automated testing and deployment</p>
+                    <a href="https://github.com/JilvinAbraham/ci-cd-pipeline" class="project-link">View Details</a>
+                </div>
+                <div class="project-card">
+                    <h3>Kubernetes Cluster Setup</h3>
+                    <p>Designed and deployed a highly available Kubernetes cluster with multipass ansible and k3s</p>
+                    <a href="https://github.com/JilvinAbraham/devops-lab" class="project-link">View Details</a>
+                </div>
+                <div class="project-card">
+                    <h3>SSH Access Management</h3>
+                    <p>Automated solution for granting and revoking time-limited SSH access to developers in an organization</p>
+                    <a href="https://github.com/JilvinAbraham/ssh-access-management" class="project-link">View Details</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="projects" class="projects">
-        <h2>My Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <img src="images/project1.jpg" alt="CI/CD Pipeline">
-                <h3>Automated CI/CD Pipeline</h3>
-                <p>Implemented a robust CI/CD pipeline using Jenkins and Docker for automated testing and deployment<br><br></p>
-                <a href="https://github.com/JilvinAbraham/ci-cd-pipeline" class="project-link">View Details</a>
-            </div>
-            <div class="project-card">
-                <img src="images/project2.jpg" alt="Kubernetes Cluster">
-                <h3>Kubernetes Cluster Setup</h3>
-                <p>Designed and deployed a highly available Kubernetes cluster with multipass ansible and k3s<br><br></p>
-                <a href="https://github.com/JilvinAbraham/devops-lab" class="project-link">View Details</a>
-            </div>
-            <div class="project-card">
-                <img src="images/project3.jpg" alt="Infrastructure as Code">
-                <h3>SSH Access Management</h3>
-                <p> Automated solution for granting and revoking time-limited SSH access to developers in an organization.<br><br></p>
-                <a href="" class="project-link">View Details</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="blog" class="blog">
-        <h2>My Blog</h2>
-        <div class="blog-grid">
-            <div class="blog-card">
-                <div class="blog-image">
-                    <img src="images/blog1.jpg" alt="DevOps Best Practices">
-                </div>
-                <div class="blog-content">
-                    <span class="blog-date">April 29, 2024</span>
+        <section id="blog" class="blog">
+            <h2>Latest Blog Posts</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
                     <h3>Unlocking Secure Access with SSH and SSH Tunneling</h3>
-                    <p>Discover how to securely connect to your privately hosted resources using SSH and SSH tunneling. This guide explains the essentials of SSH, key-based authentication, configuring a bastion host, and setting up SSH tunnels for safe and seamless access to remote servers.</p>
+                    <p>Discover how to securely connect to your privately hosted resources using SSH and SSH tunneling.</p>
                     <a href="https://jilvinabraham.hashnode.dev/unlocking-secure-access-connecting-to-your-privately-hosted-resources-with-ssh-and-ssh-tunneling" class="blog-link">Read More</a>
                 </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-image">
-                    <img src="images/blog2.jpg" alt="Kubernetes Guide">
-                </div>
-                <div class="blog-content">
-                    <span class="blog-date">April 28, 2024</span>
+                <div class="blog-card">
                     <h3>Port Knocking</h3>
-                    <p>A comprehensive guide to understanding port knocking, a technique used to secure network connections by requiring multiple sequential connections to specific ports.</p>
+                    <p>A comprehensive guide to understanding port knocking, a technique used to secure network connections.</p>
                     <a href="https://jilvinabraham.hashnode.dev/port-knocking" class="blog-link">Read More</a>
                 </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-image">
-                    <img src="images/blog3.jpg" alt="CI/CD Pipeline">
-                </div>
-                <div class="blog-content">
-                    <span class="blog-date">April 27, 2024</span>
-                    <h3>Understanding Essential Git Tools: git bisect, git blame, and git rerere</h3>
+                <div class="blog-card">
+                    <h3>Understanding Essential Git Tools</h3>
                     <p>Learn how to use git bisect, git blame, and git rerere to debug and maintain your codebase efficiently.</p>
                     <a href="https://jilvinabraham.hashnode.dev/understanding-essential-git-tools" class="blog-link">Read More</a>
                 </div>
             </div>
-        </div>
-        <div class="blog-cta">
-            <a href="https://jilvinabraham.hashnode.dev/" class="cta-button">View All Blogs</a>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="contact">
-        <h2>Get in Touch</h2>
-        <div class="contact-content">
-            <div class="contact-message">
-                <h3>Let's Connect!</h3>
-                <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
-                <p>Feel free to reach out to me at:</p>
-                <a href="mailto:jilvinthomas@gmail.com" class="email-link">jilvinthomas@gmail.com</a>
+        <section id="contact" class="contact">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Let's Connect!</h2>
+                    <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+                    <div class="contact-email">
+                        <a href="mailto:jilvinthomas@gmail.com" class="email-link">
+                            <i class="fas fa-envelope"></i>
+                            jilvinthomas@gmail.com
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/JilvinAbraham" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jilvinabraham/" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/jilvinabraham" target="_blank" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://jilvinabraham.hashnode.dev/" target="_blank" title="Blog">
+                            <i class="fas fa-blog"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="social-links">
-                <a href="https://github.com/JilvinAbraham"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/jilvinabraham/"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; All rights reserved.</p>
+        <p>&copy; 2024 Jilvin Abraham. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
