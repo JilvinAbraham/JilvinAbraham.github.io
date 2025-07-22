@@ -62,3 +62,20 @@ window.addEventListener('scroll', () => {
         }
     });
 }); 
+
+// Blog slider arrow functionality
+window.addEventListener('DOMContentLoaded', function () {
+    const slider = document.querySelector('.blog-slider');
+    const leftArrow = document.querySelector('.blog-slider-arrow.left');
+    const rightArrow = document.querySelector('.blog-slider-arrow.right');
+    if (slider && leftArrow && rightArrow) {
+        const card = slider.querySelector('.blog-card');
+        const scrollAmount = card ? card.offsetWidth + 32 : 350; // 32px gap
+        leftArrow.addEventListener('click', () => {
+            slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+        rightArrow.addEventListener('click', () => {
+            slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+    }
+}); 

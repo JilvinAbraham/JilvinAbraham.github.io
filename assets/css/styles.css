@@ -417,6 +417,101 @@ section h2 {
     font-weight: 500;
 }
 
+/* Blog Slider Styles */
+.blog-slider-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.blog-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 2rem;
+    padding: 2rem 0;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+}
+.blog-slider::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Webkit */
+}
+
+.blog-card {
+    min-width: 320px;
+    max-width: 350px;
+    flex: 0 0 auto;
+}
+
+/* Improved Blog Slider Arrow Styles */
+.blog-slider-arrow {
+    background: #fff;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.10), 0 1.5px 4px rgba(0,0,0,0.06);
+    transition: background 0.2s, color 0.2s, border 0.2s, transform 0.18s, box-shadow 0.18s;
+    margin: 0 0.5rem;
+    outline: none;
+    position: relative;
+}
+.blog-slider-arrow:active {
+    transform: scale(0.95);
+}
+.blog-slider-arrow:hover, .blog-slider-arrow:focus {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--hover-color);
+    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.18), 0 2px 8px rgba(0,0,0,0.10);
+    transform: scale(1.08);
+}
+
+.blog-slider-arrow svg {
+    width: 1.5em;
+    height: 1.5em;
+    display: block;
+    pointer-events: none;
+}
+
+@media (max-width: 900px) {
+    .blog-slider-wrapper {
+        padding: 0 0.5rem;
+    }
+    .blog-card {
+        min-width: 260px;
+        max-width: 90vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .blog-slider-wrapper {
+        padding: 0;
+    }
+    .blog-card {
+        min-width: 90vw;
+        max-width: 95vw;
+    }
+    .blog-slider-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 1.3rem;
+    }
+    .blog-slider-arrow svg {
+        width: 1.1em;
+        height: 1.1em;
+    }
+}
+
 /* Contact Section */
 .contact {
     background-color: var(--secondary-background);
